@@ -21,10 +21,9 @@ namespace RealEstateSample
             InitializeComponent();
         }
 
-        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             LoadData();
-            await GetPosition();
         }
 
         private void LoadData()
@@ -63,14 +62,6 @@ namespace RealEstateSample
             if (r != null)
                 r = house;
             HousesGrid.Items.Refresh();
-        }
-
-        public async Task GetPosition()
-        {
-            Geolocator geolocator = new Geolocator() { DesiredAccuracyInMeters = 5 };
-            Geoposition pos = await geolocator.GetGeopositionAsync();
-
-            await TheMap.TrySetViewAsync(pos.Coordinate.Point, 15.0);
         }
     }
 }

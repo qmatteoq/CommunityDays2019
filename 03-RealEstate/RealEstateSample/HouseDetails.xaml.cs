@@ -30,14 +30,5 @@ namespace RealEstateSample
                 imgPhoto.DataContext = SelectedHouse.Photos.Last();
 
         }
-
-        private void WindowsXamlHost_ChildChanged(object sender, EventArgs e)
-        {
-            if (sender is WindowsXamlHost windowsXamlHost &&
-              windowsXamlHost.Child is EngineComponent.EngineModel model)
-            {
-                model.ModelUrl = new Uri("ms-appx:///RealEstateSample/Model/engine.gltf");
-            }
-        }
     }
 }

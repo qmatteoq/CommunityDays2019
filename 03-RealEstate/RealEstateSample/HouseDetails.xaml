@@ -132,10 +132,5 @@
 
         </Grid>
 
-        <xamlhost:WindowsXamlHost InitialTypeName="EngineComponent.EngineModel" ChildChanged="WindowsXamlHost_ChildChanged" 
-                                  Height="380"
-                                  Width="500"
-                                  />
-
     </StackPanel>
 </Window>
