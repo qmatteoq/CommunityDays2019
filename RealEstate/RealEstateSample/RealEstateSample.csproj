@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Model\engine.gltf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RedmondHouses.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Resource Include="Images\AddNewExpense.png" />
+    <Resource Include="Images\contoso.ico" />
+    <Resource Include="Images\ExpensesBackground.jpg" />
+    <Resource Include="Images\ExpensesListBackground.png" />
+    <Resource Include="Images\HorizontalBackground.png" />
+    <Resource Include="Images\HouseBackground2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="4.1.4" />
+    <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls" Version="6.0.0-preview6.1" />
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.18362.2002-preview" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\EngineComponent\bin\x64\Debug\EngineComponent.xr.xml" Link="EngineComponent\EngineComponent.xr.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\EngineComponent\bin\x64\Debug\EngineModel.xbf" Link="EngineComponent\EngineModel.xbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EngineComponent\EngineComponent.csproj" />
+  </ItemGroup>
+
+</Project>
